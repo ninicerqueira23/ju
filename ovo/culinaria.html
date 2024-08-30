@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre o Ovo</title>
+    <link rel="icon" href="LOGOO.jpeg" type="image/png">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background-color: #fff5e6; /* Fundo claro */
+        }
+
+        header {
+            background-color: #4d3a00;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+            border-bottom: 2px solid #3a2b00;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 80px;
+            width: auto;
+            display: block;
+            margin-right: 20px;
+        }
+
+        .logo h1 {
+            font-size: 24px;
+            margin: 0;
+            color: white;
+        }
+
+        nav {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 5px 10px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+        }
+
+        .profile-button {
+            background-color: #ffab00;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            margin-left: 20px;
+        }
+
+        .profile-button:hover {
+            background-color: #e69a00;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .comida {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .comida img {
+            max-width: 100%; /* A imagem ocupará 100% da largura do contêiner */
+            height: auto;    /* A altura será ajustada automaticamente para manter a proporção */
+        }
+
+        .tables {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            text-align: center;
+        }
+
+        .table-container {
+            background-color: #ffffff;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        footer {
+            background-color: #4d3a00;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: relative; 
+            bottom: 0;
+            width: 100%;
+        }
+
+        .container2 {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+        }
+
+        .box {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin: 10px;
+            width: 250px;
+            text-align: center;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .box img {
+            width: 100%;
+            height: auto;
+            border-bottom: 1px solid #ddd;
+            width: 100%;  /* A imagem ocupará 100% da largura do contêiner */
+    height: 200px; /* Define uma altura fixa para todas as imagens */
+    object-fit: cover; /* Faz com que a imagem cubra o contêiner sem distorção */
+        }
+
+        .box p {
+            padding: 15px;
+            margin: 0;
+            font-size: 16px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="LOGOO.jpeg" alt="Logo" />
+            
+        </div>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="mural.html">Mural</a></li>
+                <li><a href="culinaria.html">Culinária</a></li>
+                <li><a href="estatisticas.html">Estatísticas</a></li>
+                <li><a href="eventos.html">Eventos</a></li>
+            </ul>
+        </nav>
+        <button class="profile-button">Perfil</button>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <h1>Culinária</h1>
+
+        <div class="comida">
+            <img src="comida.jpeg" alt="Comida">
+        </div>
+
+        <div class="tables">
+            <div class="table-container">
+                <h2>Receitas com Ovos</h2>
+                <!-- Tabela 1 -->
+            </div>
+        </div>
+
+        <div class="container2">
+            <div class="box">
+                <img src="culinaria.jpeg" alt="Imagem 1">
+                <p>Omelete com Cebolinha</p>
+            </div>
+            <div class="box">
+                <img src="culinaria2.jpeg" alt="Imagem 2">
+                <p>Omelete de Forno sem Oléo</p>
+            </div>
+            <div class="box">
+                <img src="culinaria3.jpeg" alt="Imagem 3">
+                <p>Strogonoff com Ovo de Cozinha</p>
+            </div>
+            <div class="box">
+                <img src="CULINARIA5.jpeg" alt="Imagem 4">
+                <p>Omelete com Legumes</p>
+            </div>
+        </div>
+        <div class="container2">
+            <div class="box">
+                <img src="culinaria6.jpeg" alt="Imagem 1">
+                <p>Ovinhos a Milanesa</p>
+            </div>
+            <div class="box">
+                <img src="culinaria7.jpeg" alt="Imagem 2">
+                <p>Ovos com grão, espinafres e tomate</p>
+            </div>
+            <div class="box">
+                <img src="culinaria9.jpeg" alt="Imagem 3">
+                <p>Quindim light</p>
+            </div>
+            <div class="box">
+                <img src="culinaria10.jpeg" alt="Imagem 4">
+                <p>Abacate com Ovo</p>
+            </div>
+        </div>
+    </main>
+
+    <footer id="footer">
+        <p>Rua Patrocínio Monteiro Nº 485 - Centro - Bastos - SP<br>
+        Fone: (14) 3478-3862 ou (14) 9704-1459 - CEP: 17690-000<br>
+        ovoonline@ovoonline.com.br</p>
+    </footer>
+</body>
+</html>

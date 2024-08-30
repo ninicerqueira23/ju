@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre o Ovo</title>
+    <link rel="icon" href="LOGOO.jpeg" type="image/png">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #4d3a00;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+            border-bottom: 2px solid #3a2b00;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center; /* Alinha verticalmente a logo */
+        }
+
+        .logo img {
+            height: 80px; /* Ajusta a altura da logo */
+            width: auto;
+            display: block;
+            margin-right: 20px; /* Espaço entre a logo e o título */
+        }
+
+        .logo h1 {
+            font-size: 24px;
+            margin: 0; /* Remove margens padrão do h1 */
+            color: white;
+        }
+
+        nav {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 5px 10px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+        }
+
+        .profile-button {
+            background-color: #ffab00;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            margin-left: 20px; /* Adiciona margem à esquerda para mover o botão */
+        }
+
+        .profile-button:hover {
+            background-color: #e69a00;
+        }
+
+        .carrossel-container {
+            position: relative;
+            max-width: 80%;
+            margin: 20px auto;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .slides {
+            display: flex;
+            transition: transform 0.7s ease-in-out;
+        }
+
+        .slide {
+            min-width: 100%;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+        }
+
+        .slide img {
+            width: 80%;
+            height: auto;
+            display: block;
+            border-radius: 10px;
+        }
+
+        .carrossel-buttons {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+
+        .carrossel-buttons button {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 50%;
+            transition: background-color 0.3s;
+        }
+
+        .carrossel-buttons button:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .dots-container {
+            text-align: center;
+            padding: 10px;
+        }
+
+        .dot {
+            height: 15px;
+            width: 15px;
+            margin: 0 5px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+
+        .active {
+            background-color: #717171;
+        }
+
+        .sobre-ovo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+            background-color: #fff5e6;
+            border-top: 5px solid #4d3a00;
+        }
+
+        .imagem-ovo img {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            margin-right: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        .descricao {
+            max-width: 600px;
+        }
+
+        .descricao h1 {
+            color: #4d3a00;
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        .descricao p {
+            font-size: 18px;
+            color: #333;
+        }
+
+        .tabela-precos {
+            padding: 40px 20px;
+            background-color: #f9f9f9;
+            margin-top: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        }
+
+        thead th {
+            background-color: #fff5e6;
+            color: #4d3a00;
+            padding: 12px;
+            font-size: 18px;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tbody td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: center;
+            font-size: 16px;
+            color: #333;
+        }
+
+        footer {
+            background-color: #4d3a00;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: relative; /* Remove o position: fixed */
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="LOGOO.jpeg" alt="Logo" />
+             </div>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="mural.html">Mural</a></li>
+                <li><a href="culinaria.html">Culinária</a></li>
+                <li><a href="estatisticas.html">Estatísticas</a></li>
+                <li><a href="eventos.html">Eventos</a></li>
+            </ul>
+        </nav>
+        <button class="profile-button">Perfil</button>
+    </header>
+
+    <div class="carrossel-container">
+        <div class="slides">
+            <div class="slide">
+                <img src="ovo1.jpg" alt="Imagem 1">
+            </div>
+            <div class="slide">
+                <img src="ovo2.jpg" alt="Imagem 2">
+            </div>
+            <div class="slide">
+                <img src="ovo3.png" alt="Imagem 3">
+            </div>
+            <div class="slide">
+                <img src="ovo4.jpg" alt="Imagem 4">
+            </div>
+        </div>
+        <div class="carrossel-buttons">
+            <button onclick="mudarSlide(-1)">❮</button>
+            <button onclick="mudarSlide(1)">❯</button>
+        </div>
+        <div class="dots-container">
+            <span class="dot active" onclick="currentSlide(0)"></span>
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+    </div>
+
+    <main>
+        <section class="sobre-ovo">
+            <div class="imagem-ovo">
+                <img src="ovo.jpg" alt="Ovo" />
+            </div>
+            <div class="descricao">
+                <h1>Sobre o Ovo!</h1>
+                <p>O ovo é um alimento versátil e cheio de benefícios. Ajuda na perda de peso, melhora a saúde do coração e da visão, combate a flacidez da pele e pode até prevenir o câncer. Estudos mostram que o consumo diário de ovos não prejudica o coração, tornando-o um alimento indispensável na dieta.</p>
+            </div>
+        </section> 
+
+        <section class="tabela-precos">
+            <h2>Tabela de Preços</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Produto</th>
+                        <th>26/08/2024</th>
+                        <th>há 30 dias</th>
+                        <th>há 1 ano</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Milho sc c/60kgs CIF Bastos</td>
+                        <td>R$60,00</td>
+                        <td>R$58,00</td>
+                        <td>R$54,00</td>
+                    </tr>
+                    <tr>
+                        <td>Farelo de soja ton CIF Bastos</td>
+                        <td>R$2030,00</td>
+                        <td>R$2090,00</td>
+                        <td>R$1950,00</td>
+                    </tr>
+                    <tr>
+                        <td>Sal mineral ton CIF Bastos</td>
+                        <td>R$1800,00</td>
+                        <td>R$1780,00</td>
+                        <td>R$1700,00</td>
+                    </tr>
+                    <tr>
+                        <td>Uréia sac CIF Bastos</td>
+                        <td>R$100,00</td>
+                        <td>R$98,00</td>
+                        <td>R$95,00</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer id="footer">
+        <p>Rua Patrocínio Monteiro Nº 485 - Centro - Bastos - SP<br>
+        Fone: (14) 3478-3862 ou (14) 9704-1459 - CEP: 17690-000<br>
+        ovoonline@ovoonline.com.br</p>
+    </footer>
+
+    <script>
+        let slideIndex = 0;
+        const slides = document.querySelectorAll('.slide');
+        const dots = document.querySelectorAll('.dot');
+
+        function mudarSlide(n) {
+            slideIndex += n;
+            if (slideIndex > slides.length - 1) {
+                slideIndex = 0;
+            }
+            if (slideIndex < 0) {
+                slideIndex = slides.length - 1;
+            }
+            atualizarSlides();
+        }
+
+        function currentSlide(n) {
+            slideIndex = n;
+            atualizarSlides();
+        }
+
+        function atualizarSlides() {
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.transform = `translateX(-${100 * slideIndex}%)`;
+            }
+            for (let i = 0; i < dots.length; i++) {
+                dots[i].classList.remove('active');
+            }
+            dots[slideIndex].classList.add('active');
+        }
+
+        // Iniciar o carrossel
+        atualizarSlides();
+
+        // Remover o evento de scroll para o rodapé
+        // window.removeEventListener('scroll', ...); 
+    </script>
+</body>
+</html>

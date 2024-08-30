@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O Alimento Perfeito</title>
+    <link rel="icon" href="LOGOO.jpeg" type="image/png">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('fundo.jpeg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            color: #fff;
+            overflow: hidden; /* Remove a barra de rolagem */
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between; /* Espaça itens igualmente */
+            align-items: center; /* Alinha verticalmente */
+        }
+
+        header {
+            background-color: rgba(0, 0, 0, 0.5);  /* Cor de fundo semi-transparente */
+            padding: 20px 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: fixed; /* Fixo na tela */
+            top: 0; /* Posiciona no topo */
+            width: 100%; /* Largura total */
+            z-index: 10; /* Garante que o cabeçalho fique por cima do conteúdo */
+            height: 80px; /* Aumenta a altura do cabeçalho para acomodar a logo maior */
+            display: flex;
+            align-items: center;
+            justify-content: space-between; /* Espaça os itens do cabeçalho */
+        }
+
+        .logo {
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .logo img {
+            width: 200px; /* Aumenta a largura da logo */
+        }
+
+        nav {
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex; /* Adiciona flexbox para alinhar itens horizontalmente */
+        }
+
+        nav li {
+            display: inline-block;
+            margin-left: 30px; /* Ajuste o espaço entre itens */
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Sombra no texto */
+        }
+
+        .btn-1-container {
+            margin-left: auto; /* Empurra o botão para o lado direito */
+        }
+
+        .btn-1 {
+            background-color: #ffffff;
+            color: #000000; /* Cor do texto do botão */
+            padding: 10px 20px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-left: 90px;
+            z-index: 20; /* Garante que o botão esteja acima da linha */
+            position: relative; /* Necessário para que o z-index tenha efeito */
+        }
+
+        .btn-1 span { /* Span para o texto "Faça seu" */
+            color: #000; /* Cor preta para "Faça seu" */
+        }
+
+        .btn-1 span:last-child { /* Span para o texto "Login" */
+            color: #ffc107; /* Cor amarela para "Login" */
+        }
+
+        .btn {
+            background-color: #fcb900;
+            color: #000000; /* Cor do texto do botão */
+            padding: 10px 20px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-top: 20px; /* Espaço extra acima do botão */
+        }
+
+        .btn span { /* Span para o texto do botão */
+            color: #000; /* Cor preta para o texto do botão */
+        }
+
+        .btn span:last-child { /* Span para o texto do botão */
+            color: #ffc107; /* Cor amarela para o texto do botão */
+        }
+
+        .hero {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Ocupa toda a altura da tela */
+            position: relative; /* Permite posicionar elementos dentro dele */
+            padding-top: 80px; /* Adiciona espaço para o cabeçalho maior */
+        }
+
+        .hero-content {
+            text-align: center;
+            position: relative; /* Necessário para que a linha não sobreponha o conteúdo */
+            z-index: 10; /* Garante que o conteúdo esteja acima da linha */
+        }
+
+        .hero-content h1 {
+            font-size: 48px;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6); /* Sombra no texto */
+        }
+
+        .hero-content h2 {
+            font-size: 36px;
+            color: #ffc107;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Sombra no texto */
+        }
+
+        .hero-content p {
+            font-size: 18px;
+            line-height: 1.5;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Sombra no texto */
+        }
+
+        .hero-line {
+            position: absolute;
+            width: 100%;
+            height: 2px; /* Espessura da linha */
+            background-color: #fcb900; /* Cor da linha */
+            top: 67%; /* Posição vertical ajustada */
+            z-index: 5; /* Coloca a linha atrás dos outros elementos */
+        }
+
+        footer {
+            background-color: rgba(0, 0, 0, 0.5);  /* Cor de fundo semi-transparente */
+            color: #fff;
+            padding: 20px 0;
+            text-align: center; /* Centraliza o texto no rodapé */
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            z-index: 10; /* Garante que o rodapé fique por cima do conteúdo */
+        }
+
+        footer .container {
+            justify-content: center; /* Centraliza o conteúdo do rodapé */
+        }
+
+        footer p {
+            margin: 0; /* Remove a margem padrão */
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Sombra no texto */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo"> <img src="logo.png" alt="Logo"></a>
+            <nav>
+                <ul>
+                    <li><a href="home.html">HOME</a></li>
+                    <li><a href="estatistica.html">ESTATÍSTICA</a></li>
+                </ul>
+            </nav>
+            <div class="btn-1-container">
+                <button class="btn-1"><span>Faça seu</span> <span>Login</span></button>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-line"></div> <!-- Linha horizontal -->
+        <div class="container">
+            <div class="hero-content">
+                <h1>O Alimento Perfeito</h1>
+                <h2>saúde e praticidade</h2>
+                <p>O ovo para qualquer estilo de vida! Entrega grátis*</p>
+                <button class="btn">Assine Agora!</button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>© 2023 O Alimento Perfeito. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

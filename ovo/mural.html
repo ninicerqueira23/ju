@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mural de Avaliações</title>
+    <link rel="icon" href="LOGOO.jpeg" type="image/png">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #4d3a00;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+            border-bottom: 2px solid #3a2b00;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center; /* Alinha verticalmente a logo */
+        }
+
+        .logo img {
+            height: 80px; /* Ajusta a altura da logo */
+            width: auto;
+            display: block;
+            margin-right: 20px; /* Espaço entre a logo e o título */
+        }
+
+        .logo h1 {
+            font-size: 24px;
+            margin: 0; /* Remove margens padrão do h1 */
+            color: white;
+        }
+
+        nav {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 5px 10px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+        }
+
+        .profile-button {
+            background-color: #ffab00;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            margin-left: 20px; /* Adiciona margem à esquerda para mover o botão */
+        }
+
+        .profile-button:hover {
+            background-color: #e69a00;
+        }
+
+        .mural-container {
+            max-width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .avaliacao {
+            margin-bottom: 20px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 20px;
+        }
+
+        .avaliacao h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .avaliacao .autor {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .avaliacao .data {
+            font-size: 14px;
+            color: #888;
+            margin-bottom: 10px;
+        }
+
+        .avaliacao p {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        .estrelas {
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .estrela {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            background-image: url('estrela.png'); /* Substitua por sua imagem de estrela */
+            background-size: cover;
+            margin-right: 5px;
+        }
+
+        .estrela.preenchida {
+            background-image: url('estrela-preenchida.png'); /* Substitua por sua imagem de estrela preenchida */
+        }
+
+        footer {
+            background-color: #4d3a00;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: relative; /* Remove o position: fixed */
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Formulário de Avaliação */
+        .form-avaliacao {
+            margin-top: 20px;
+        }
+
+        .form-avaliacao label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-avaliacao input[type="text"],
+        .form-avaliacao textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .form-avaliacao textarea {
+            height: 100px;
+        }
+
+        .form-avaliacao button {
+            background-color: #ffab00;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="LOGOO.jpeg" alt="Logo" />
+        </div>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="mural.html">Mural</a></li>
+                <li><a href="culinaria.html">Culinária</a></li>
+                <li><a href="estatisticas.html">Estatísticas</a></li>
+                <li><a href="eventos.html">Eventos</a></li>
+            </ul>
+        </nav>
+        <button class="profile-button">Perfil</button>
+    </header>
+
+    <div class="mural-container">
+        <h2>Avaliações do Site do Ovo</h2>
+
+        <div class="avaliacao">
+            <h3>Excelente experiência!</h3>
+            <div class="autor">João Silva</div>
+            <div class="data">26/08/2024</div>
+            <div class="estrelas">
+                <span class="estrela preenchida"></span>
+                <span class="estrela preenchida"></span>
+                <span class="estrela preenchida"></span>
+                <span class="estrela preenchida"></span>
+                <span class="estrela preenchida"></span>
+            </div>
+            <p>Adoro o site do Ovo! A interface é fácil de usar, a entrega é rápida e os produtos são de ótima qualidade. Recomendo a todos!</p>
+        </div>
+
+        <div class="avaliacao">
+            <h3>Ótimo site!</h3>
+            <div class="autor">Maria Oliveira</div>
+            <div class="data">25/08/2024</div>
+            <div class="estrelas">
+                <span class="estrela preenchida"></span>
+                <span class="estrela preenchida"></span>
+                <span class="estrela preenchida"></span>
+                <span class="estrela preenchida"></span>
+                <span class="estrela"></span>
+            </div>
+            <p>Achei os preços do site muito bons e a variedade de produtos é excelente. Encontrei tudo o que precisava e ainda aproveitei as promoções!</p>
+        </div>
+
+        <div class="avaliacao">
+            <h3>Atendimento impecável</h3>
+            <div class="autor">Pedro Santos</div>
+            <div class="data">24/08/2024</div>
+            <div class="estrelas">
+                <span class="estrela preenchida"></span>
+                <span class="estrela preenchida"></span>
+                <span class="estrela preenchida"></span>
+                <span class="estrela preenchida"></span>
+                <span class="estrela"></span>
+            </div>
+            <p>O atendimento do site é impecável. Tive uma dúvida e fui atendido rapidamente por um atendente muito educado e solícito. Parabéns!</p>
+        </div>
+
+        <div class="form-avaliacao">
+            <h3>Deixe sua Avaliação</h3>
+            <form>
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required>
+
+
+                <label for="comentario">Comentário:</label>
+                <textarea id="comentario" name="comentario"></textarea>
+
+                <button type="submit">Enviar Avaliação</button>
+            </form>
+        </div>
+
+    </div>
+
+    <footer id="footer">
+        <p>Rua Patrocínio Monteiro Nº 485 - Centro - Bastos - SP<br>
+        Fone: (14) 3478-3862 ou (14) 9704-1459 - CEP: 17690-000<br>
+        ovoonline@ovoonline.com.br</p>
+    </footer>
+</body>
+</html>
